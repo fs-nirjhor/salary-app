@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Person from "./components/person/Person";
+import Cart from "./components/cart/Cart";
+import { useState } from "react";
 
 function App() {
+  const [addedPersons, setAddedPersons] = useState([]);
+  const addButtonHandler = (person) => {
+    const newAddedPersons = [...addedPersons, person] ;
+    setAddedPersons(newAddedPersons);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>SALARY APP</h1>
+    <div className="container">
+      <Person addButtonHandler={addButtonHandler}></Person>
+        <Cart persons={addedPersons}></Cart>
+    </div>
     </div>
   );
 }
