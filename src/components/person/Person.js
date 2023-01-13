@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import personData from "./Person.json";
 import "./Person.css";
 import { useState, useEffect } from "react";
@@ -25,7 +27,7 @@ return (
      <p>Address: {person.address}</p>
      <p>Country: {person.country}</p>
      <b>Salary: ${person.salary}</b> <br />
-     <button onClick={() => props.addButtonHandler(person)} >➕ Add</button>
+     <button onClick={() => props.addButtonHandler(person)} > <FontAwesomeIcon icon={faUserPlus} /> Add</button>
      </div>
    </div>
    )
