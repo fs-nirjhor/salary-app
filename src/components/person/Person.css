@@ -8,8 +8,9 @@
 }
 button {
   margin: 10px;
-  background-color: lightgreen;
+  background-color: azure;
   color: black;
+  border-radius: 5px;
 }
 .photo-box {
   width : 40%;
