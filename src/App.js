@@ -13,6 +13,8 @@ function App() {
   const [addedPersons, setAddedPersons] = useState([]);
   const addButtonHandler = (person) => {
     setAddedPersons([...addedPersons, person]);
+   const duePersons = persons.filter(p => p.id !== person.id);
+   setPersons(duePersons);
   };
   return (
     <div className="App">
